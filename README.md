@@ -23,4 +23,11 @@ Initially you should install the NuGet Packages and arrange the MySQL database.
     1. On the bottom of the page, in the Less secure app access panel, click Turn on access.
 1. Turn off that setting after using the email system to avoid security issues.
 ## Run the program now
+
+# Features of this project.
+
+* The administrators can add new movies, reserve tickets, get details of the tickets, manage expenses. 
+* The customers can make their own accounts and every customer is have their own credentials.
+* Customers can reserve tickets, view movies available and get data about movies.
+
 ## HAPPY CODING.
