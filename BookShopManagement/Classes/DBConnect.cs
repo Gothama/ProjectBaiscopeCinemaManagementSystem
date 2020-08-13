@@ -11,7 +11,7 @@ namespace BookShopManagement.Classes
 {
     public class DBConnect
     {
-        public MySqlConnection connection = new MySqlConnection("server=localhost;database=cinemamanagementsystem;uid=root;pwd=12345");
+        public MySqlConnection connection = new MySqlConnection("server=localhost;database=cinemamanagementsystem;uid=root;pwd=1234");
         public DBConnect()
         {
             try

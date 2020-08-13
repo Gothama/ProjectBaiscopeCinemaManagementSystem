@@ -102,6 +102,17 @@ namespace BookShopManagement.Classes
             sqldata.Fill(dttable);
             return dttable;
         }
+        public DataTable getDataForChart()
+        {
+            DBConnect dBConnect = new DBConnect();
+
+            MySqlDataAdapter sqldata = new MySqlDataAdapter("getDataForChart", dBConnect.connection);
+            sqldata.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            DataTable dttable = new DataTable();
+            sqldata.Fill(dttable);
+            return dttable;
+        }
 
     }
 }

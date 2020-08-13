@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace BookShopManagement.Classes
         private string timeSlot;
 
         DBConnect dBConnect;
-
+        
         public BookATicket( int seatNum, string movieName,  string cusNIC, string price, DateTime date, string timeSlot)
         {
           
@@ -63,6 +64,22 @@ namespace BookShopManagement.Classes
 
             QRCodeGenerate ticketQR = new QRCodeGenerate();
             return ticketQR.ticketQRCode("Gothama", movieName,date.ToString(), timeSlot);
+        }
+        public DataTable getSeatNumbers(string movieName, DateTime date ,string timeSlot)
+        {
+            DBConnect dBConnect = new DBConnect();
+
+            MySqlCommand cmd = new MySqlCommand();
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            DataTable dt = new DataTable();
+            cmd = new MySqlCommand("getSeatNumbers", dBConnect.connection);
+            cmd.Parameters.Add(new MySqlParameter("_movieName", movieName));
+            cmd.Parameters.Add(new MySqlParameter("_date", date));
+            cmd.Parameters.Add(new MySqlParameter("_timeSlot", timeSlot));
+            cmd.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            return dt;
         }
     }
 }
