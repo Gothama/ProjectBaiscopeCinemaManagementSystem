@@ -29,14 +29,10 @@ namespace BookShopManagement.UserControls
             
 
         }
-        private void controlArray()
-        {
-            Button[] btnArray = { button2, button4, button18, button17, button26, button25, button34, button33,
-                button5, button6, button16, button15, button24, button23,button32, button31};
-        }
+        
         private void bookedSeats()
         {
-            // controlArray();
+          
             Button[] btnArray = { button2, button4, button18, button17, button26, button25, button34, button33,
                 button5, button6, button16, button15, button24, button23,button32, button31};
             DBConnect dBConnect = new DBConnect();
@@ -55,7 +51,10 @@ namespace BookShopManagement.UserControls
             cmd.CommandType = CommandType.StoredProcedure;
             da.SelectCommand = cmd;
             da.Fill(dt);
-
+            for(int k = 0; k<btnArray.Length; k++)
+            {
+                btnArray[k].BackColor = Color.FromArgb(0, 192, 0);
+            }
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt.Rows[i];
@@ -187,6 +186,16 @@ namespace BookShopManagement.UserControls
         }
 
         private void UC_MakeReservations_Load(object sender, EventArgs e)
+        {
+            bookedSeats();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bookedSeats();
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
             bookedSeats();
         }
