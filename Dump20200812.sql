@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `cinemamanagementsystem` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `cinemamanagementsystem`;
--- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
 --
 -- Host: localhost    Database: cinemamanagementsystem
 -- ------------------------------------------------------
--- Server version	8.0.20
+-- Server version	8.0.18
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `expenses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `expenses` (
-  `expenseID` int NOT NULL AUTO_INCREMENT,
+  `expenseID` int(11) NOT NULL AUTO_INCREMENT,
   `expenseTitle` varchar(45) DEFAULT NULL,
   `amount` decimal(10,0) DEFAULT NULL,
   `description` varchar(45) DEFAULT NULL,
@@ -80,13 +80,13 @@ DROP TABLE IF EXISTS `moviesdetails`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `moviesdetails` (
-  `movieID` int NOT NULL AUTO_INCREMENT,
+  `movieID` int(11) NOT NULL AUTO_INCREMENT,
   `movieName` varchar(45) DEFAULT NULL,
   `movieReleasedDate` varchar(45) DEFAULT NULL,
   `movieType` varchar(45) DEFAULT NULL,
   `trailerLink` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`movieID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +95,7 @@ CREATE TABLE `moviesdetails` (
 
 LOCK TABLES `moviesdetails` WRITE;
 /*!40000 ALTER TABLE `moviesdetails` DISABLE KEYS */;
-INSERT INTO `moviesdetails` VALUES (9,'Fast','2020','Comedy','www.facebook.com'),(10,'Scooby Doo','2020','Animated','www.scoobydoo.com'),(11,'Titanic','2020','Adventure','www.titanic.com'),(12,'Tintin','2019','Animated','www.youtube.com');
+INSERT INTO `moviesdetails` VALUES (9,'Fast','2020','Comedy','www.facebook.com'),(10,'Scooby Doo','2020','Animated','www.scoobydoo.com'),(11,'Titanic','2020','Adventure','www.titanic.com');
 /*!40000 ALTER TABLE `moviesdetails` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -107,7 +107,7 @@ DROP TABLE IF EXISTS `tickets`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tickets` (
-  `ticketNum` int NOT NULL AUTO_INCREMENT,
+  `ticketNum` int(11) NOT NULL AUTO_INCREMENT,
   `seatNum` varchar(45) DEFAULT NULL,
   `movieName` varchar(45) DEFAULT NULL,
   `cusNIC` varchar(45) DEFAULT NULL,
@@ -115,7 +115,7 @@ CREATE TABLE `tickets` (
   `date` date DEFAULT NULL,
   `timeSlot` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ticketNum`)
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +124,7 @@ CREATE TABLE `tickets` (
 
 LOCK TABLES `tickets` WRITE;
 /*!40000 ALTER TABLE `tickets` DISABLE KEYS */;
-INSERT INTO `tickets` VALUES (46,'2','Ice Age 2','9993790002V','1000','2020-07-14','4'),(47,'1','Tintin','Admin','1000','2020-07-06','2'),(48,'6','Tintin','3454545654V','1000','2020-07-07','2'),(49,'5','Tintin','3454545654V','1000','2020-07-02','3'),(50,'1','Ice Age 2','9993790002V','1000','2020-08-09','1st Slot '),(51,'1','Ice Age 2','9993790002V','1000','2020-08-09','3rd Slot'),(52,'1','Fast','343345345345v','1000','2020-08-05','2nd Slot'),(53,'2','Scooby Doo','971170301v','1000','2020-08-20','2nd Slot'),(54,'1','Fast','971170301v','1000','2020-08-12','1st Slot ');
+INSERT INTO `tickets` VALUES (46,'2','Ice Age 2','9993790002V','1000','2020-07-14','4'),(47,'1','Tintin','Admin','1000','2020-07-06','2'),(48,'6','Tintin','3454545654V','1000','2020-07-07','2'),(49,'5','Tintin','3454545654V','1000','2020-07-02','3'),(50,'1','Ice Age 2','9993790002V','1000','2020-08-09','1st Slot '),(51,'1','Ice Age 2','9993790002V','1000','2020-08-09','3rd Slot'),(52,'1','Fast','343345345345v','1000','2020-08-05','2nd Slot'),(53,'2','Scooby Doo','971170301v','1000','2020-08-20','2nd Slot'),(54,'1','Fast','971170301v','1000','2020-08-13','1st Slot '),(55,'1','Fast','971170301v','1000','2020-08-13','1st Slot '),(56,'2','Fast','971170301v','1000','2020-08-13','1st Slot ');
 /*!40000 ALTER TABLE `tickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -259,6 +259,25 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `getDataForChart` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getDataForChart`()
+BEGIN
+	select movieName , COUNT(movieName) from tickets GROUP BY movieName;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `getExpenses` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -358,6 +377,29 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `getSeatNumbers` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getSeatNumbers`(
+_movieName VARCHAR(50),
+_date DATE,
+_timeSlot VARCHAR(50)
+)
+BEGIN
+	SELECT seatNum 	FROM tickets WHERE movieName=_movieName AND date=_date AND timeSlot=_timeSlot;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -368,4 +410,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-12 23:44:35
+-- Dump completed on 2020-08-13 22:51:52
