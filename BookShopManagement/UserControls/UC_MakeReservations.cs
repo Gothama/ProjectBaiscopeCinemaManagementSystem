@@ -71,7 +71,7 @@ namespace BookShopManagement.UserControls
         {
             if(c == Color.Red)
             {
-                MessageBox.Show("This is already booked");
+                MessageBox.Show("This is already booked" , "Error" , MessageBoxButtons.OK ,MessageBoxIcon.Error);
             }
             else
             {

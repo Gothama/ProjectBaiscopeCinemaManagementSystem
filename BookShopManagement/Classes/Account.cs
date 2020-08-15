@@ -60,7 +60,7 @@ namespace BookShopManagement.Classes
                 mysqlcmd.Parameters.AddWithValue("_Password", Password);
                 mysqlcmd.Parameters.AddWithValue("_Username", Username);
                 mysqlcmd.ExecuteNonQuery();
-                MessageBox.Show("Account Created");
+                MessageBox.Show("Account Created" , "Successfull", MessageBoxButtons.OK , MessageBoxIcon.Information);
                 connection.Close();
             }
             catch(Exception ex)

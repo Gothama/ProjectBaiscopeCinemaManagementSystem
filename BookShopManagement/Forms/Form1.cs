@@ -50,7 +50,7 @@ namespace BookShopManagement
             }
             else
             {
-                MessageBox.Show("Wrong Credentials");
+                MessageBox.Show("Wrong Credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             
         }
