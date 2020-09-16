@@ -26,7 +26,6 @@ namespace BookShopManagement.UserControls
             comboBox1.DataSource =  m.getMovieNames();
             comboBox1.DisplayMember = "movieName";
             comboBox2.SelectedIndex = 0;
-            
 
         }
         
@@ -63,9 +62,17 @@ namespace BookShopManagement.UserControls
         }
         private void btnReserveASeat_Click(object sender, EventArgs e)
         {
-            int seatNum = Convert.ToInt16(txtSeatNum.Text);
-            bk = new BookATicket(seatNum, comboBox1.Text,NIC , "1000", dateTimePicker1.Value, comboBox2.Text);
-            bk.makeTicket();
+            try
+            {
+                int seatNum = Convert.ToInt16(txtSeatNum.Text);
+                bk = new BookATicket(seatNum, comboBox1.Text,NIC , "1000", dateTimePicker1.Value, comboBox2.Text);
+                bk.makeTicket();
+            }
+            catch(Exception k)
+            {
+                MessageBox.Show("Select the Seat","Error" , MessageBoxButtons.RetryCancel , MessageBoxIcon.Error);
+            }
+            
         }
         private void getNumber(int seat , Color c)
         {
@@ -192,12 +199,19 @@ namespace BookShopManagement.UserControls
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bookedSeats();
+            //bookedSeats();
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
             bookedSeats();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Ticket n = new Ticket(comboBox1.Text, txtSeatNum.Text,comboBox2.Text,dateTimePicker1.ToString());
+            //string movieName, string seatNum,string showTime, string date
+            n.Show();
         }
     }
 }

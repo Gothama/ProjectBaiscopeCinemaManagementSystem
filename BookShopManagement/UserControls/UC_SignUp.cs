@@ -57,7 +57,7 @@ namespace BookShopManagement.UserControls
         private void button4_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            ((Form)this.TopLevelControl).Dispose();
+           //((Form)this.TopLevelControl).Dispose();
         }
 
         private void UC_SignUp_Load(object sender, EventArgs e)

@@ -346,7 +346,6 @@
             this.Name = "Form_Dashboard";
             this.Text = "Form_Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-
             this.panelLeft.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

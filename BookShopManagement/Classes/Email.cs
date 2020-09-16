@@ -11,7 +11,7 @@ namespace BookShopManagement.Classes
     class Email
     {
         private string email = "StudentDataSchool@gmail.com";
-        private string password = "sadasd";
+        private string password = "KeLaNiYa";
 
 
 

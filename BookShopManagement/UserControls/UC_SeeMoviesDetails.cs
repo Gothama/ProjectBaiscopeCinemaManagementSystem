@@ -38,17 +38,21 @@ namespace BookShopManagement.UserControls
 
             BindingSource bSource = new BindingSource();
             bSource.DataSource = dttable;
-
-
-            dataGridView1.DataSource = bSource;
+            
+            dataGridView2.DataSource = bSource;
+            dataGridView2.Columns[0].HeaderText = "Movie ID";
+            dataGridView2.Columns[1].HeaderText = "Movie Name";
+            dataGridView2.Columns[2].HeaderText = "Movie Released Year";
+            dataGridView2.Columns[3].HeaderText = "Movie Type";
+            dataGridView2.Columns[4].HeaderText = "Movie Trailer Link";
+            //dataGridView1.DataSource = bSource;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
             QRCodeGenerate gr = new QRCodeGenerate();
-            pictureBox1.Image = gr.trailerLinkQRcode(row.Cells["trailerLinkDataGridViewTextBoxColumn"].Value.ToString());
-            
+            pictureBox1.Image = gr.trailerLinkQRcode(row.Cells[4].Value.ToString());
         }
 
         

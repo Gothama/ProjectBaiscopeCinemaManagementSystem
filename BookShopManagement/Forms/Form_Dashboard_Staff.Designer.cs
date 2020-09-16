@@ -344,9 +344,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(165, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 23);
+            this.label5.Size = new System.Drawing.Size(117, 23);
             this.label5.TabIndex = 0;
-            this.label5.Text = "SaLaaR HuSyN";
+            this.label5.Text = "User Name";
             // 
             // labelTime
             // 

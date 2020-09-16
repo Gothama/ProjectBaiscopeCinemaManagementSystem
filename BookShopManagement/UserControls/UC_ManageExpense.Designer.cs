@@ -110,6 +110,7 @@
             this.button1.Text = "   Refresh";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -117,7 +118,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(613, 24);
+            this.label5.Location = new System.Drawing.Point(733, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(188, 23);
             this.label5.TabIndex = 4;
