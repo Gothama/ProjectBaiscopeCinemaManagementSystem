@@ -10,8 +10,8 @@ namespace BookShopManagement.Classes
 {
     class Email
     {
-        private string email = "StudentDataSchool@gmail.com";
-        private string password = "KeLaNiYa";
+        private string email = "";
+        private string password = "";
 
 
 
@@ -19,8 +19,8 @@ namespace BookShopManagement.Classes
         {
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-            mail.From = new MailAddress("StudentDataSchool@gmail.com");
-            mail.To.Add("albertlinconnr@gmail.com");
+            mail.From = new MailAddress("");
+            mail.To.Add("");
             mail.Subject = "Test Mail - 1";
             mail.Body = body;
 
@@ -38,8 +38,8 @@ namespace BookShopManagement.Classes
         {
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-            mail.From = new MailAddress("StudentDataSchool@gmail.com");
-            mail.To.Add("albertlinconnr@gmail.com");
+            mail.From = new MailAddress("");
+            mail.To.Add("");
             mail.Subject = "Test Mail - 1";
             mail.Body = promotion;
 

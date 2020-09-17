@@ -60,7 +60,7 @@ namespace BookShopManagement.Forms
 
                 if (!mRegxExpression.IsMatch(txtTrailerLink.Text.Trim()))
                 {
-                    MessageBox.Show("E-mail address format is not correct.", "MojoCRM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Trailer Link format is not correct.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtTrailerLink.Focus();
                 }
             }

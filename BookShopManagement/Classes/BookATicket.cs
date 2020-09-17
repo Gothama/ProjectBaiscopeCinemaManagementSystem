@@ -46,11 +46,11 @@ namespace BookShopManagement.Classes
             mysqlcmd.Parameters.AddWithValue("_date", date);
             mysqlcmd.Parameters.AddWithValue("_timeSlot", timeSlot);
             mysqlcmd.ExecuteNonQuery();
-            MessageBox.Show("Successfully reseaved a ticket");
+            MessageBox.Show("Successfully reseaved a ticket","Successful", MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch(Exception e)
             { 
-                MessageBox.Show(e.Message);
+                MessageBox.Show(e.Message,"Error", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
            
         }

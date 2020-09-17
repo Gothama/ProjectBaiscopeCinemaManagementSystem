@@ -56,7 +56,7 @@ namespace BookShopManagement.UserControls
                     {
                         string k  = result.ToString();
                         timer1.Stop();
-                        MessageBox.Show("Welcome you to the SkyLight 3D Cinema " + k);
+                        MessageBox.Show("Welcome you to the SkyLight 3D Cinema\n" + k,"Ticket", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception k)

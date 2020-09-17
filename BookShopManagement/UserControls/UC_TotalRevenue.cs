@@ -33,8 +33,8 @@ namespace BookShopManagement.UserControls
            dataGridView1.Columns[1].HeaderText = "Seat Number";
            dataGridView1.Columns[2].HeaderText = "Movie Name";
            dataGridView1.Columns[3].HeaderText = "Customer NIC";
-            dataGridView1.Columns[4].HeaderText = "Date";
-            dataGridView1.Columns[5].HeaderText = "Time Slot";
+           dataGridView1.Columns[4].HeaderText = "Date";
+           dataGridView1.Columns[5].HeaderText = "Time Slot";
 
 
 

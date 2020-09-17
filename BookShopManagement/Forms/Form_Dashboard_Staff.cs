@@ -136,7 +136,7 @@ namespace BookShopManagement.Forms
         private void btnAbout_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnAbout);
-            UC_StaffAccount vs = new UC_StaffAccount();
+            UC_About vs = new UC_About();
             AddControlsToPanel(vs);
         }
 

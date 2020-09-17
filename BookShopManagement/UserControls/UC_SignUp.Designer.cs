@@ -94,6 +94,7 @@
             // 
             this.txtNic.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNic.Location = new System.Drawing.Point(381, 217);
+            this.txtNic.MaxLength = 10;
             this.txtNic.Name = "txtNic";
             this.txtNic.Size = new System.Drawing.Size(244, 32);
             this.txtNic.TabIndex = 1;

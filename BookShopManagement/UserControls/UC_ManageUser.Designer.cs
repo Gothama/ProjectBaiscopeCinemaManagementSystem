@@ -128,6 +128,7 @@
             // 
             this.txtPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPhone.Location = new System.Drawing.Point(209, 146);
+            this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(199, 32);
             this.txtPhone.TabIndex = 1;
@@ -148,6 +149,7 @@
             // 
             this.txtNIC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNIC.Location = new System.Drawing.Point(562, 144);
+            this.txtNIC.MaxLength = 10;
             this.txtNIC.Name = "txtNIC";
             this.txtNIC.Size = new System.Drawing.Size(244, 32);
             this.txtNIC.TabIndex = 1;

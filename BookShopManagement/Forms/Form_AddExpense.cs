@@ -28,6 +28,7 @@ namespace BookShopManagement.Forms
         {
             if (!(String.IsNullOrEmpty(txtExpenseTitle.Text) && String.IsNullOrEmpty(txtDescription.Text) && String.IsNullOrEmpty(txtAmount.Text)))
             {
+                //if all the fields are filled then this code will start to execute
                 try
                 {
                     string expenseTitle = txtExpenseTitle.Text;
@@ -51,7 +52,7 @@ namespace BookShopManagement.Forms
                 }
             }
             else
-            {
+            { // if the fields are not filled this code segement will execute
                 MessageBox.Show("Pls Fill all the fields");
             }
         }
@@ -70,7 +71,6 @@ namespace BookShopManagement.Forms
         private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-
             {
 
                 e.Handled = true;

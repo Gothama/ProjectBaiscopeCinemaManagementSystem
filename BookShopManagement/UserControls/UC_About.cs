@@ -11,17 +11,18 @@ using BookShopManagement.Classes;
 
 namespace BookShopManagement.UserControls
 {
-    public partial class UC_StaffAccount : UserControl
+    public partial class UC_About : UserControl
     {
         Movies m = new Movies();
-        public UC_StaffAccount()
+        public UC_About()
         {
             InitializeComponent();
-            chart1.DataSource = m.getDataForChart();
-            chart1.Series["Movies"].XValueMember = "COUNT(movieName)";
-            chart1.Series["Movies"].YValueMembers = "movieName";
-            chart1.Titles.Add("Movie Chart");
+           
         }
-        
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
